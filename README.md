@@ -1,5 +1,6 @@
 
-# OpenRepairPlatform
+# OpenRepairPlatform CH
+(branche dédiée au serveur Suisse)
 
 Ce projet cherche à faciliter l’accessibilité de la réparation par le plus grand nombre. Par une interface simple et claire, l'application web invite participants et organisations à collaborer autours de l’auto-réparation et de la réparation participative.
 
