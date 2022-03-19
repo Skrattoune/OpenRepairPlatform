@@ -10,12 +10,19 @@ RUN ln /usr/bin/sassc /usr/bin/sass
 COPY requirements.txt /
 RUN pip3 install -r /requirements.txt && rm /requirements.txt
 
-# French ENV for date
-RUN sed -i -e 's/# fr_FR.UTF-8 UTF-8/fr_FR.UTF-8 UTF-8/' /etc/locale.gen && \
+# SwissFrench ENV for date
+RUN sed -i -e 's/# fr_CH.UTF-8 UTF-8/fr_CH.UTF-8 UTF-8/' /etc/locale.gen && \
     locale-gen
-ENV LC_ALL fr_FR
-ENV LANG fr_FR
-ENV LANGUAGE fr_FR
+ENV LC_ALL fr_CH
+ENV LANG fr_CH
+ENV LANGUAGE fr_CH
+
+# # French ENV for date
+# RUN sed -i -e 's/# fr_FR.UTF-8 UTF-8/fr_FR.UTF-8 UTF-8/' /etc/locale.gen && \
+#     locale-gen
+# ENV LC_ALL fr_FR
+# ENV LANG fr_FR
+# ENV LANGUAGE fr_FR
 
 RUN mkdir /srv/app /srv/static /srv/media
 
