@@ -15,7 +15,7 @@ class Command(BaseCommand):
     help = "Send email to all registered users the day before the event"
 
     def add_arguments(self, parser):
-        parser.add_argument("website_url", help="ex: https://dev.atelier-soude.fr")
+        parser.add_argument("website_url", help="ex: https://repaircafes.ch")
 
     def handle(self, *args, **options):
         base_url = options["website_url"]
