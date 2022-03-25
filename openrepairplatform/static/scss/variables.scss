@@ -1,9 +1,65 @@
 /****** Main color chooser ******/
 // need to solve the cache and rebuild problem
+// 5 themes + original + tests
 
-/****
-$primary: #00796B;
-$secondary: #009688;
+/*** Dark Random ****/
+
+$primary: #2c2c2c; // use for : background + icon selectionnée 
+$secondary: #EDEDED; // use for : menu icon color non selectionnée + Background icon selectionnée + Jumbotron
+$success: #0a5096;  // use for : Button, Background footer, some texts
+$link: #af5800;   // lien 
+$bg-light: #fde7d0;  // use for Page Main background
+$danger: #c76a00;  //
+
+
+/*** Green + Orange ***/
+/*
+$primary: #00443c; // green dark
+$secondary: #b4e7e3; // green light
+$success: #009688;  //  green intermedi
+$link: #d4ac31;   //  orange
+$bg-light: #ececec;  // light gray
+$danger: #dbab1a;  // orange
+*/
+
+
+/*** Green Olive + Gray ***/
+/*
+$primary: #3d5c21; // green#2 dark
+$secondary: #DCEDC8; // green light
+$success: #8bc34a;  //  green intermedi
+$link: #FFC107;   //  orange
+$bg-light: #e6e6e6;  // light gray
+$danger: #607d8b;  // orange
+*/
+
+/*** Red + Gray ***/
+/*
+$primary: #b10213; // red dark
+$secondary: #FFCdd2; // red light
+$success: #d13a2f;  //  green intermedi
+$link: #607d8b;   //  orange
+$bg-light: #e6e6e6;  // light gray
+$danger: #607d8b;  // orange
+*/
+/*** Blue + Gray ***/
+/*
+$primary: #303f9f; // blue dark
+$secondary: #c5cae9; // red light
+$success: #3f51b5;  //  green intermedi
+$link: #8bc34a;   //  orange
+$bg-light: #e6e6e6;  // light gray
+$danger: #8bc34a;  // orange
+*/
+
+
+
+
+/******** Original Reparons.Org  *********/
+
+/*
+$primary: #009688;
+$secondary: #2cE9AD;
 $success: #2be6ab;
 $link: #498ed3;
 $bg-light: #B2DFDB;
@@ -11,32 +67,23 @@ $danger: #FFC107;
 */
 
 
+/******** Red and Green Christmas ***/
+/**
+$primary: #D32F2F;
+$secondary: #FFCDD2;
+$success: #2be6ab; 
+$link: #F44336;
+$bg-light: #607D8B;
+$danger: #FFC107;
+**/
 
-$primary: #009688;
-$secondary: #2cE9AD;
+
+/*** ALL Green strange **/
+/*
+$primary: #00796B;
+$secondary: #009688;
 $success: #2be6ab;
 $link: #498ed3;
 $bg-light: #B2DFDB;
 $danger: #FFC107;
 
-
-
-/******** Red and Green Christmas *****/
-/*** $primary: #D32F2F;
- $secondary: #FFCDD2;
- $success: #2be6ab; 
- $link: #F44336;
- $bg-light: #607D8B;
- $danger: #FFC107;
-***/
-
-
-/*** Dark Random ****/
-/***
-$primary: #010101;
-$secondary: #EDEDED;
-$success: #123456; 
-$link: #654321;
-$bg-light: #995511;
-$danger: #AABBCC;
-***/
