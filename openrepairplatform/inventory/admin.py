@@ -19,7 +19,7 @@ from .models import (
     Status,
 )
 
-ENCODING = 'ISO_LATIN_1'
+ENCODING = 'iso-8859-1'
 
 class DeviceAdmin(DynamicArrayMixin, ImportExportActionModelAdmin, SimpleHistoryAdmin):
     to_encoding = ENCODING
