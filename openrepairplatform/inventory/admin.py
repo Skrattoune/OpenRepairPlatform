@@ -19,8 +19,12 @@ from .models import (
     Status,
 )
 
+ENCODING = 'ISO_LATIN_1'
 
 class DeviceAdmin(DynamicArrayMixin, ImportExportActionModelAdmin, SimpleHistoryAdmin):
+    to_encoding = ENCODING
+    from_encoding = ENCODING
+    
     class Meta:
         model = Device
 
@@ -31,22 +35,34 @@ class CategoryResource(resources.ModelResource):
 
 
 class CategoryAdmin(ImportExportActionModelAdmin, TreeAdmin):
+    to_encoding = ENCODING
+    from_encoding = ENCODING
     form = movenodeform_factory(Category)
 
 
 class BrandAdmin(ImportExportActionModelAdmin, SimpleHistoryAdmin):
+    to_encoding = ENCODING
+    from_encoding = ENCODING
     ... 
 
 class ObservationAdmin(ImportExportActionModelAdmin, SimpleHistoryAdmin):
+    to_encoding = ENCODING
+    from_encoding = ENCODING
     ... 
 
 class ActionAdmin(ImportExportActionModelAdmin, SimpleHistoryAdmin):
+    to_encoding = ENCODING
+    from_encoding = ENCODING
     ... 
 
 class ReasoningAdmin(ImportExportActionModelAdmin, SimpleHistoryAdmin):
+    to_encoding = ENCODING
+    from_encoding = ENCODING
     ... 
 
 class StatusAdmin(ImportExportActionModelAdmin, SimpleHistoryAdmin):
+    to_encoding = ENCODING
+    from_encoding = ENCODING
     ... 
 
 admin.site.register(Brand, BrandAdmin)
