@@ -37,9 +37,8 @@ class ActivityListView(LocationActivity, ListView):
         queryset = (
             Activity.objects.all()
             .annotate(category_count=Count("category"))
-            .order_by("-category_count")
+            .order_by("category__index", "-category_count")
         )
-        queryset = queryset.order_by("category__name")
         queryset = self.filter_queryset_location(queryset)
         return queryset
 
