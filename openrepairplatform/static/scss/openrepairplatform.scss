@@ -189,6 +189,7 @@ td {
   display: block !important ;
   z-index: 9999;
   width: 100% !important;
+  min-width: 10em !important;
 }
 .search-bar{
   .form-group{
