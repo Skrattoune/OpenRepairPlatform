@@ -17,8 +17,6 @@ services:
       dockerfile: deployment/django/Dockerfile
     image: openrepairplatform_python
     container_name: openrepairplatform_python
-    ports:
-      - "8000:8000"
     env_file:
       - ../openrepairplatform/.env
     volumes:
@@ -33,17 +31,43 @@ services:
     image: nginx:latest
     container_name: openrepairplatform_nginx
     ports:
-      - "80:80"
+      - 80:80
+      - 443:443
     env_file:
       - ../openrepairplatform/.env
     volumes:
+      - ./nginx/templates-no-certificat/:/etc/nginx/templates
+      - ./nginx/nginx-snippet.conf:/etc/nginx/snippets/ssl-params.conf
+      - ./certbot/www:/var/www/certbot/:ro
+      - ./certbot/conf/:/etc/nginx/ssl/:ro
       - ./openrepairplatform_data/openrepairplatform_static:/srv/static:ro
       - ./openrepairplatform_data/openrepairplatform_media:/srv/media:ro
-      - ./nginx/templates-no-certificat/:/etc/nginx/templates
+      - certs:/etc/letsencrypt
     networks:
       - openrepairplatform-net
     depends_on:
       - django 
+    restart: unless-stopped
+
+  certbot:
+    image: gordonchan/auto-letsencrypt
+    links:
+    - nginx
+    volumes: 
+      - ./certbot/www/:/var/www/certbot/:rw 
+      - ./certbot/conf/:/etc/lestencrypt/:rw 
+      - /var/log/letsencrypt/:/var/log/letsencrypt
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /var/lib/letsencrypt:/var/lib/letsencrypt
+      - certs:/etc/letsencrypt
+    env_file:
+      - ../openrepairplatform/.env
+    restart: unless-stopped
+    networks:
+      - openrepairplatform-net
 
 networks:
   openrepairplatform-net:
+
+volumes:
+  certs: 
