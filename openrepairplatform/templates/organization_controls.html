@@ -43,7 +43,7 @@
                     <h4 class="card-title">{{ place.name }}</h4>
                     <h6 class="card-subtitle mb-2 text-muted">{{ place.address }}</h6>
                     <span class="badge bg-secondary">{{ place.category }}</span>
-                    {{ place.description | safe | truncatewords_html:10 }}
+                    {{ place.description | safe | truncatewords_html:40 }}
                   </div>
                   {% if is_admin %}
                     <div class="card-footer">
