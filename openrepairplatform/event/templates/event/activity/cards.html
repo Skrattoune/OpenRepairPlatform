@@ -16,7 +16,7 @@
           <div style="min-height: 48px;">
             <h5 class="card-title">{{ activity.name }}</h5>
           </div>
-          {{ activity.description | safe | truncatewords_html:15 }}
+          {{ activity.description | safe | truncatewords_html:40 }}
           <footer class="blockquote-footer">
             Créé par
             <a href="{% url 'organization_page' activity.organization.slug %}">
