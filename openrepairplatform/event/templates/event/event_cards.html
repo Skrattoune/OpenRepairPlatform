@@ -112,9 +112,9 @@
             <small class="text-muted">
               <i>
               {% if event.description %}
-                {{ event.description | safe | truncatewords_html:15 }}
+                {{ event.description | safe | truncatewords_html:20 }}
               {% else %}
-                {{ event.activity.description | safe | truncatewords_html:8 }}
+                {{ event.activity.description | safe | truncatewords_html:20 }}
               {% endif %}
               </i>
             </small>
