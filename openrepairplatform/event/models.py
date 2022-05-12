@@ -270,9 +270,9 @@ class Event(models.Model):
 
     def __str__(self):
         if self.activity:
-            activity_name = self.activity.name
+            activity_name = self.event_title or self.activity.name
         else:
-            activity_name = "no activity type"
+            activity_name = self.event_title or "no activity type"
         full_title = "%s du %s" % (
             activity_name,
             self.date.strftime("%d %B"),
