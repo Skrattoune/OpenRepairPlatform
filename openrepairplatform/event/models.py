@@ -140,6 +140,10 @@ class Event(models.Model):
     activity = models.ForeignKey(
         Activity, on_delete=models.SET_NULL, null=True, related_name="events"
     )
+    event_title = models.CharField(verbose_name=_("Event title"), max_length=100,
+                                  help_text = _("Event title which will override the Activity name"),
+                                  )
+    
     description = CleanHTMLField(
         verbose_name=_(
             "Description supplémentaire de l'événément "
