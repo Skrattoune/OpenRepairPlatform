@@ -74,7 +74,7 @@
       <a class="d-block btn mt-2 btn-light w-100 p-3" href="{{ event.get_absolute_url }}">Passer l'étape</a>
       {% else %}
       <a class="d-block btn mt-4 btn-light w-100 p-3" id="close" href="{{ event.get_absolute_url }}">Fermer</a>
-      Retour automatique dans <span class="c" id="10"></span>
+      {% comment %} Retour automatique dans <span class="c" id="10"></span> {% endcomment %}
       {% endif %}
   </div>
 {% block extra_js %}
