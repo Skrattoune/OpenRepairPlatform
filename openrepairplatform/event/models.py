@@ -140,7 +140,7 @@ class Event(models.Model):
     activity = models.ForeignKey(
         Activity, on_delete=models.SET_NULL, null=True, related_name="events"
     )
-    event_title = models.CharField(verbose_name=_("Event title"), max_length=100,
+    event_title = models.CharField(verbose_name=_("Event title"), max_length=100, blank=True, null=True,
                                   help_text = _("Event title which will override the Activity name"),
                                   )
     
