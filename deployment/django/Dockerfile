@@ -11,15 +11,14 @@ COPY requirements.txt /
 RUN pip3 install -r /requirements.txt && rm /requirements.txt
 
 # SwissFrench ENV for date
-RUN sed -i -e 's/# fr_CH.UTF-8 UTF-8/fr_CH.UTF-8 UTF-8/' /etc/locale.gen && \
-    locale-gen
-ENV LC_ALL fr_CH
+ENV LC_ALL fr_CH.utf8
 ENV LANG fr_CH
 ENV LANGUAGE fr_CH
 
+RUN sed -i -e 's/# fr_CH.UTF-8 UTF-8/fr_CH.UTF-8 UTF-8/' /etc/locale.gen && locale-gen
+
 # # French ENV for date
-# RUN sed -i -e 's/# fr_FR.UTF-8 UTF-8/fr_FR.UTF-8 UTF-8/' /etc/locale.gen && \
-#     locale-gen
+# RUN sed -i -e 's/# fr_FR.UTF-8 UTF-8/fr_FR.UTF-8 UTF-8/' /etc/locale.gen && locale-gen
 # ENV LC_ALL fr_FR
 # ENV LANG fr_FR
 # ENV LANGUAGE fr_FR
