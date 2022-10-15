@@ -119,7 +119,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 # https://docs.djangoproject.com/en/1.11/topics/i18n/
 
 COUNTRY = 'CH'  #'FR', 'CH', 'US' 
-LANGUAGE_CODE = f"fr_{COUNTRY}" # fr_fr, fr_CH
+LANGUAGE_CODE = 'fr-ch' # fr_fr, fr_CH
 
 TIME_ZONE = "Europe/Paris"
 
