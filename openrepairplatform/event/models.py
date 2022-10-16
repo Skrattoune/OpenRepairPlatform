@@ -37,8 +37,9 @@ class Condition(models.Model):
         return locale.currency(self.price, grouping=True)
 
     def __str__(self):
-        if self.price > 0:
-            return f"{self.name} - {self.price_w_currency}"
+        #### nfavrod / 20221015 - generate RecursionError : maximum recursion depth exceeded while getting the repr of an object  
+        # if self.price > 0:
+        #    return f"{self.name} - {self.price_w_currency}"
         return self.name
 
 
